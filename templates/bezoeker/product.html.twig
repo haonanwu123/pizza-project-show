@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+{% block product %}
+<div class="container-fluid m-0 p-0">
+    <div class="card border-start-0 border-end-0">
+        <img src="{{ asset('img/pizza-background.jpg') }}" class="card-img pizza-background" alt="pizza-background">
+        <div class="card-img-overlay text-center">
+            <h5 class="card-title text-light pizza-background-title">WELKOM</h5>
+            <p class="card-text pizza-background-text">Online bestellen bij Palooza Pizza Company (PPC) Den Haag!</p>
+            <div class="row products">
+                {% for product in products %}
+                    <div class="card" style="width: 25rem;">
+                        <img src="{{ product.img }}" class="card-img img-fluid" alt="pizza's">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <a href="{{ path('order', {id:product.id}) }}" class="btn">Bestel Nu<i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .pizza-background {
+        width: 100vw !important;
+        height: 100vh!important;
+        border-radius: unset!important;
+    }
+
+    .pizza-background-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 75px;
+    }
+
+    .pizza-background-text {
+        font-size: 50px;
+        color: whitesmoke;
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    .products {
+        transform: translateX(22rem);
+        margin-top: 20px;
+    }
+
+    .products .card {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        margin-right: 15px;
+    }
+
+    .products .card .img-fluid {
+        max-width: 400px;
+        height: 400px;
+        display: block;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+
+    .products .card .card-img-overlay .card-title {
+        font-size: 30px;
+        color: whitesmoke;
+    }
+
+    .products .card .card-img-overlay .card-text {
+        font-size: 16px;
+        color: rgba(245, 245, 245, 0.8);
+    }
+
+    .products .card .card-img-overlay .btn {
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: unset;
+        border: none;
+        color: rgb(255, 0, 0);
+        font-size: 24px ;
+        font-family: "Arial Rounded MT Bold";
+    }
+
+    .products .card .card-img-overlay .btn:hover {
+        margin-left: 10px;
+        transition: all 0.3s;
+    }
+</style>
+{% endblock %}

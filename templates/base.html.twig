@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Pizzapalooza{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+            <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+
+    <body>
+    {% block body %}
+    {% block header %}
+    <header>
+            <nav class="navbar navbar-expand-lg bg-dark">
+                <div class="container-fluid">
+                    <a class="logo-photo" href="{{ path('home') }}"><img class="logo-photo" src="/img/pizza-logo.png" alt="pizza-logo"></a>
+                    <a class="navbar-brand" href="{{ path('home') }}">Pizzapalooza</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('contact') }}">contact</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item text-end pe-5">
+                                <a class="nav-link" href="{{ path('login') }}">log in</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>{#    navbar#}
+    </header>
+    {% endblock %}
+    {% block category %} {% endblock %}
+    {% block product %} {% endblock %}
+    {% block contact %} {% endblock %}
+    {% block login %} {% endblock %}
+    {% block order%} {% endblock %}
+    {% block order_view %} {% endblock %}
+    {% block register %} {% endblock %}
+    {% block footer %}
+            <footer class="m-0">
+                <div class="container-fluid m-0 p-0">
+                    <div class="card text-center footer">
+                        <div class="card-header text-secondary">
+                            <i class="bi bi-calendar-heart me-5"></i>Pizzapalooza
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Adres</h5>
+                                        <p class="card-text">MGR van Teraasstraat 1</p>
+                                        <p class="card-text">1111AA Standard</p>
+                                        <p class="card-text">06-12345678</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bezorgtijden</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="card-text text-time">Maandag:</p>
+                                                <p class="card-text text-time">Dinsdag:</p>
+                                                <p class="card-text text-time">Woensdag:</p>
+                                                <p class="card-text text-time">Donderdag:</p>
+                                                <p class="card-text text-time">Vrijdag:</p>
+                                                <p class="card-text text-time">Zaterdag:</p>
+                                                <p class="card-text text-time">Zondag:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text">15:00 - 02:50</p>
+                                                <p class="card-text">15:00 - 03:55</p>
+                                                <p class="card-text">15:00 - 03:00</p>
+                                                <p class="card-text">15:00 - 03:30</p>
+                                                <p class="card-text">15:00 - 04:00</p>
+                                                <p class="card-text">15:00 - 04:00</p>
+                                                <p class="card-text">15:00 - 03:15</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Openingstijden</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="card-text text-time">Maandag:</p>
+                                                <p class="card-text text-time">Dinsdag:</p>
+                                                <p class="card-text text-time">Woensdag:</p>
+                                                <p class="card-text text-time">Donderdag:</p>
+                                                <p class="card-text text-time">Vrijdag:</p>
+                                                <p class="card-text text-time">Zaterdag:</p>
+                                                <p class="card-text text-time">Zondag:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-text">15:00 - 02:00</p>
+                                                <p class="card-text">15:00 - 01:30</p>
+                                                <p class="card-text">15:00 - 01:55</p>
+                                                <p class="card-text">15:00 - 01:30</p>
+                                                <p class="card-text">15:00 - 01:00</p>
+                                                <p class="card-text">15:00 - 02:00</p>
+                                                <p class="card-text">15:00 - 01:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-secondary">
+                            <a class="card-footer-link text-secondary" href="#"><i class="bi bi-instagram me-3"></i></a>
+                            <a class="card-footer-link text-secondary"  href="#"><i class="bi bi-facebook me-3"></i></a>
+                            <a class="card-footer-link text-secondary" href="#"><i class="bi bi-whatsapp me-3"></i></a>
+                            <a class="card-footer-link text-secondary"  href="#"><i class="bi bi-linkedin me-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    {% endblock %}
+    </body>
+{% endblock %}
+
+</html>

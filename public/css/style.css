@@ -1,0 +1,77 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo-photo {
+   max-width:100px;
+}
+
+.navbar-brand {
+    background: linear-gradient(to right, rgb(255, 251, 213), rgb(255, 0, 0))!important;
+    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    font-size: 30px!important;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.nav-link {
+    color: whitesmoke!important;
+    font-size: 20px!important;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.nav-link:hover {
+    text-shadow: 4px 4px 2px rgba(255, 255, 255,0.8);
+    transition: all 0.3s;
+}
+
+.card {
+    border-radius: unset!important;
+    border-color: whitesmoke!important;
+}
+
+.footer {
+    background-color: black!important;
+    color: whitesmoke!important;
+    border: none!important;
+}
+
+.card-header {
+    border-color: whitesmoke!important;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.card-title {
+    font-size: 24px;
+    font-family: "Bodoni MT Poster Compressed";
+}
+
+.card-text {
+    color: rgba(245, 245, 245, 0.8);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.text-time {
+    color: rgba(245, 245, 245, 0.6);
+}
+
+.card-footer {
+    border-color: whitesmoke!important;
+}
+
+.card-footer-link {
+    font-size: 20px;
+}
+
+.card-footer-link:hover {
+    color: whitesmoke!important;
+    transition: all 0.3s!important;
+}

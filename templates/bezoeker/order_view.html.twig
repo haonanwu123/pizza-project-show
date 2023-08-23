@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order View{% endblock %}
+{% block order_view %}
+    <div class="card view-body">
+        <div class="card-view">
+            <i class="checkmark">✓</i>
+        </div>
+        <h1>Success</h1>
+        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        <div class="view-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">order-times</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">address</th>
+                    <th scope="col">telephone</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in orders %}
+                <tr>
+                    <th scope="row">{{ order.id }}</th>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.email }}</td>
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.telephone }}</td>>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .view-body {
+            text-align: center;
+            padding: 40px 0;
+            background: #EBF0F5;
+            min-width: 100vw;
+            min-height: 100vh;
+        }
+
+        .card-view {
+            border-radius:200px;
+            height:200px;
+            width:200px;
+            background: #F8FAF5;
+            margin:0 auto;
+        }
+
+        .view-body h1 {
+            color: #88B04B;
+            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .view-body p {
+            color: #404F5E;
+            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+            font-size:20px;
+            margin: 0;
+        }
+        .view-body i {
+            color: #9ABC66;
+            font-size: 100px;
+            line-height: 200px;
+            margin-left:-15px;
+        }
+
+        .view-table{
+            height: 300px;!important;
+            overflow-y: auto;
+        }
+    </style>
+{% endblock %}

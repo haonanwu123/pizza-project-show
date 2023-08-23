@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block contact %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="rol-12 pizza-navbar"></div>
+        </div>
+    </div>
+    <div class="container-fluid contact-page">
+        <div class="row">
+            <div class="card">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title fs-1 text-danger">Contact</h5>
+                            <h6 class="card-subtitle mb-3 mt-3 fs-4">Contact informatie</h6>
+                            <p class="card-text text-black">Pizzacompany</p>
+                            <p class="card-text text-black">MGR van Teraasstraat 1</p>
+                            <p class="card-text text-black">1111AA Standard</p>
+                            <a class="card-link" target="_blank" href="tel:06-12345678">06-12345678</a>
+                            <a class="card-link" href="{{ path('home') }}">Pizzapalooza.nl</a>
+                            <a class="card-link" target="_blank" href="{{ asset('https://goo.gl/maps/vpmwjFysXDBxnXti9') }}">Routebeschrijving</a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.6680295426177!2d4.3398845159868085!3d52.0675680774113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b68a6d37332d%3A0x82ffc894ddc52f94!2sDen%20Haag%20Pizza%20Zonweg%20-%20DenHaagPizza.nl!5e0!3m2!1snl!2snl!4v1678869514676!5m2!1snl!2snl" width="600" height="450" style="border:1px black solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .pizza-navbar {
+            background-image: url("../img/contact-pizza-navbar.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            height: 300px;
+        }
+
+        .contact-page .row {
+            height: 500px;
+            width: auto;
+            background-color: #f9f8ff;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contact-page .card {
+            max-width: 1200px;
+            max-height: 500px;
+            transform: translateY(-100px);
+            background: #fff;
+            border: rgba(0, 0, 0, 0.5) 1px solid!important;
+        }
+
+        .contact-page .card .col-4 {
+            max-height: inherit;
+        }
+
+        .contact-page .card .col-4 .card-body .card-text {
+            font-family: inherit;
+            margin-bottom: 5px;
+        }
+
+        .contact-page .card .col-4 .card-body .card-link {
+            display: block;
+            color: rgba(255, 0, 0, 0.9);
+            font-size: 18px;
+            font-family: "Arial Rounded MT Bold";
+            text-decoration-line: unset;
+            margin-bottom: 50px;
+            font-weight: 550;
+        }
+
+        .contact-page .card .col-4 .card-body .card-link:hover {
+            text-decoration-line: underline;
+        }
+
+        .contact-page .card .col-8 {
+            max-height: inherit;
+        }
+    </style>
+{% endblock %}

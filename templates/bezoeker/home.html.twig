@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block category %}
+    <div class="container-fluid m-0 p-0">
+        <div class="card border-start-0 border-end-0">
+            <img src="{{ asset('img/pizza-background.jpg') }}" class="card-img pizza-background" alt="pizza-background">
+            <div class="card-img-overlay text-center">
+                <h5 class="card-title text-light pizza-background-title">WELKOM</h5>
+                <p class="card-text pizza-background-text">Online bestellen bij Palooza Pizza Company (PPC) Den Haag!</p>
+                <div class="row categories">
+                    {% for category in categories %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ category.img }}" class="card-img-top" alt="pizza's">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ category.name }}</h5>
+                            <p class="card-text">{{ category.description }}</p>
+                            <a href="{{ path('product', {id:category.id}) }}" class="btn">Bestel Nu<i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .pizza-background {
+            width: 100vw !important;
+            height: 100vh!important;
+            border-radius: unset!important;
+        }
+
+        .pizza-background-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 75px;
+        }
+
+        .pizza-background-text {
+            font-size: 50px;
+            color: whitesmoke;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories {
+            transform: translateX(30rem);
+            margin-top: 20px;
+        }
+
+        .categories .card {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            margin-right: 15px;
+            max-height: 60vh;
+        }
+
+        .categories .card .card-body .card-title {
+            font-size: 1.5rem;
+            color: whitesmoke;
+        }
+
+        .categories .card .card-body .card-text {
+            font-size: 1rem;
+            color: rgba(245, 245, 245, 0.8);
+        }
+
+        .categories .card .card-body .btn {
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: unset;
+            border: none;
+            color: rgb(255, 0, 0);
+            font-size: 1.5rem ;
+            font-family: "Arial Rounded MT Bold";
+        }
+
+        .categories .card .card-body .btn:hover {
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+    </style>
+{% endblock %}

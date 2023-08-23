@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} order {% endblock %}
+
+{% block order %}
+{#    <div class="container-fluid">#}
+{#        {{ form_start(form) }}#}
+
+{#        <div class="row">#}
+{#            <div calss="col">#}
+{#                {{ form_row(form.name) }}#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                {{ form_row(form.address) }}#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                {{ form_row(form.email) }}#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                {{ form_row(form.telephone) }}#}
+{#            </div>#}
+{#        </div>#}
+{#        {{ form_end(form) }}#}
+{#    </div>#}
+    <div class="container-fluid m-0 p-0">
+        <div class="card border-start-0 border-end-0">
+            <img src="{{ asset('img/pizza-background.jpg') }}" class="card-img pizza-background" alt="pizza-background">
+            <div class="card-img-overlay text-center order-page">
+                <h5 class="card-text">Pizza: {{ productName }}</h5>
+                <h5 class="card-text">Price: {{ productPrice }}euro</h5>
+                <div class="row form-page">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        {{ form_start(form) }}
+                        <div class="row">
+                            {{ form_row(form.name) }}
+                        </div>
+                        <div class="row">
+                            {{ form_row(form.address) }}
+                        </div>
+                        <div class="row">
+                            {{ form_row(form.email) }}
+                        </div>
+                        <div class="row">
+                            {{ form_row(form.telephone) }}
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .pizza-background {
+            width: 100vw !important;
+            height: 100vh!important;
+            border-radius: unset!important;
+        }
+
+        .order-page .card-text {
+            font-size: 30px;
+            color: whitesmoke;
+            width: 700px;
+            margin: 20px auto 20px auto;
+        }
+
+        .form-page {
+            transform: translateX(-20px);
+            color: whitesmoke;
+            margin-top: 100px;
+        }
+
+        .form-page .btn {
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: unset;
+            border: none;
+            color: whitesmoke;
+            font-size: 1.5rem ;
+            font-family: "Arial Rounded MT Bold";
+        }
+
+        .form-page .btn:hover {
+            margin-right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: red;
+            transition: all 0.3s;
+        }
+    </style>
+{% endblock %}
